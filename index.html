@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NEXUS // Stock Analyzer</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+  <div class="scanlines"></div>
+
+  <main class="login-shell">
+
+    <!-- BRAND -->
+    <section class="brand-panel">
+
+      <div class="brand-mark">
+        N//S
+      </div>
+
+      <p class="eyebrow">
+        NATIONAL MARKET TERMINAL
+      </p>
+
+      <h1>
+        NEXUS<br>
+        <span>STOCK ANALYZER</span>
+      </h1>
+
+      <p class="tagline">
+        Retro interface. Modern market analysis.
+      </p>
+
+      <div class="terminal-line">
+        SYSTEM STATUS:
+        <span>ONLINE</span>
+      </div>
+
+      <div class="terminal-line">
+        DATA SOURCE:
+        <span>LOCAL JSON</span>
+      </div>
+
+    </section>
+
+
+    <!-- LOGIN -->
+    <section class="login-card">
+
+      <div class="card-header">
+        <span>SECURE ACCESS</span>
+        <span class="blink">●</span>
+      </div>
+
+
+      <form id="loginForm">
+
+        <label for="username">
+          USERNAME
+        </label>
+
+        <input
+          id="username"
+          type="text"
+          autocomplete="username"
+          placeholder="Enter username"
+        >
+
+
+        <label for="password">
+          PASSWORD
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="Enter password"
+        >
+
+
+        <button
+          type="submit"
+          class="primary-btn"
+        >
+          ENTER TERMINAL
+        </button>
+
+      </form>
+
+
+      <!-- GUEST -->
+      <button
+        id="guestBtn"
+        class="ghost-btn"
+      >
+        CONTINUE AS GUEST
+      </button>
+
+
+      <!-- CREATE ACCOUNT -->
+      <button
+        id="createAccountBtn"
+        class="ghost-btn"
+      >
+        CREATE NEW ACCOUNT
+      </button>
+
+
+      <!-- DEFAULT LOGIN -->
+      <div class="login-info">
+
+        <strong>DEFAULT ACCESS</strong>
+
+        <p>
+          Username:
+          <b>admin</b>
+        </p>
+
+        <p>
+          Password:
+          <b>admin123</b>
+        </p>
+
+      </div>
+
+
+      <p
+        id="loginMessage"
+        class="message"
+      ></p>
+
+    </section>
+
+  </main>
+
+
+  <!-- CREATE ACCOUNT MODAL -->
+
+  <div
+    id="registerModal"
+    class="modal hidden"
+  >
+
+    <div class="modal-card">
+
+      <button
+        id="closeRegister"
+        class="close"
+        type="button"
+      >
+        ×
+      </button>
+
+
+      <div class="section-title">
+        NEW TERMINAL USER
+      </div>
+
+      <h3>
+        CREATE ACCOUNT
+      </h3>
+
+      <p class="modal-help">
+        Create your own username and password.
+      </p>
+
+
+      <label for="newName">
+        YOUR NAME
+      </label>
+
+      <input
+        id="newName"
+        type="text"
+        placeholder="Enter your name"
+      >
+
+
+      <label for="newUsername">
+        USERNAME
+      </label>
+
+      <input
+        id="newUsername"
+        type="text"
+        placeholder="Choose username"
+      >
+
+
+      <label for="newPassword">
+        PASSWORD
+      </label>
+
+      <input
+        id="newPassword"
+        type="password"
+        placeholder="Choose password"
+      >
+
+
+      <label for="confirmPassword">
+        CONFIRM PASSWORD
+      </label>
+
+      <input
+        id="confirmPassword"
+        type="password"
+        placeholder="Confirm password"
+      >
+
+
+      <button
+        id="registerBtn"
+        class="primary-btn"
+        type="button"
+      >
+        CREATE ACCOUNT
+      </button>
+
+
+      <p
+        id="registerMessage"
+        class="message"
+      ></p>
+
+    </div>
+
+  </div>
+
+
+  <script src="login.js"></script>
+
+</body>
+</html>

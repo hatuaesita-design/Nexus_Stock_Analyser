@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>NEXUS // Market Terminal</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="terminal-page">
+
+  <div class="scanlines"></div>
+
+
+  <!-- TOP BAR -->
+
+  <header class="topbar">
+
+    <div class="logo">
+      N//S
+      <span>NEXUS</span>
+    </div>
+
+
+    <div class="market-status">
+
+      <span class="dot"></span>
+
+      MARKET SIMULATION ONLINE
+
+    </div>
+
+
+    <div class="user-area">
+
+      <span id="userName">
+        Guest
+      </span>
+
+      <button id="profileBtn">
+        PROFILE
+      </button>
+
+      <button id="logoutBtn">
+        LOGOUT
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- DASHBOARD -->
+
+  <main class="dashboard">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <div class="section-title">
+        MARKET WATCH
+      </div>
+
+
+      <input
+        id="searchInput"
+        class="search"
+        placeholder="Search symbol / name"
+      >
+
+
+      <div
+        id="stockList"
+        class="stock-list"
+      ></div>
+
+
+      <!-- CURRENCY -->
+
+      <div class="currency-box">
+
+        <div class="section-title">
+          DISPLAY CURRENCY
+        </div>
+
+
+        <div class="currency-switch">
+
+          <button
+            class="currency active"
+            data-currency="INR"
+          >
+            ₹ INR
+          </button>
+
+
+          <button
+            class="currency"
+            data-currency="USD"
+          >
+            $ USD
+          </button>
+
+        </div>
+
+
+        <small>
+          USD conversion is for display only.
+        </small>
+
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN WORKSPACE -->
+
+    <section class="workspace">
+
+
+      <!-- STOCK HEADER -->
+
+      <div class="headline-row">
+
+        <div>
+
+          <div class="eyebrow">
+            LIVE MARKET VIEW
+          </div>
+
+
+          <h2 id="stockName">
+            Select a stock
+          </h2>
+
+
+          <span
+            id="stockSymbol"
+            class="symbol"
+          >
+            ---
+          </span>
+
+        </div>
+
+
+        <div class="price-block">
+
+          <div
+            id="stockPrice"
+            class="big-price"
+          >
+            ₹ 0.00
+          </div>
+
+
+          <div
+            id="stockChange"
+            class="change"
+          >
+            0.00%
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CHART -->
+
+      <div class="chart-panel">
+
+        <div class="chart-toolbar">
+
+          <div class="time-buttons">
+
+            <button
+              class="range active"
+              data-range="1D"
+            >
+              1D
+            </button>
+
+            <button
+              class="range"
+              data-range="1W"
+            >
+              1W
+            </button>
+
+            <button
+              class="range"
+              data-range="1M"
+            >
+              1M
+            </button>
+
+            <button
+              class="range"
+              data-range="3M"
+            >
+              3M
+            </button>
+
+            <button
+              class="range"
+              data-range="1Y"
+            >
+              1Y
+            </button>
+
+          </div>
+
+
+          <div id="chartReadout">
+            MOVE CURSOR OVER CHART
+          </div>
+
+        </div>
+
+
+        <div class="chart-wrap">
+
+          <canvas id="stockChart"></canvas>
+
+        </div>
+
+      </div>
+
+
+      <!-- BOTTOM -->
+
+      <div class="bottom-grid">
+
+
+        <!-- MARKET DATA -->
+
+        <div class="info-panel">
+
+          <div class="section-title">
+            MARKET DATA
+          </div>
+
+
+          <div class="stats-grid">
+
+            <div>
+              <span>OPEN</span>
+              <b id="openValue">--</b>
+            </div>
+
+
+            <div>
+              <span>HIGH</span>
+              <b id="highValue">--</b>
+            </div>
+
+
+            <div>
+              <span>LOW</span>
+              <b id="lowValue">--</b>
+            </div>
+
+
+            <div>
+              <span>PREV CLOSE</span>
+              <b id="prevValue">--</b>
+            </div>
+
+
+            <div>
+              <span>VOLUME</span>
+              <b id="volumeValue">--</b>
+            </div>
+
+
+            <div>
+              <span>52W HIGH</span>
+              <b id="yearHigh">--</b>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ORDER TERMINAL -->
+
+        <div class="trade-panel">
+
+          <div class="section-title">
+            ORDER TERMINAL
+          </div>
+
+
+          <div
+            id="guestNotice"
+            class="guest-notice"
+          >
+            GUEST MODE: PRICE VIEW ONLY
+          </div>
+
+
+          <div class="trade-row">
+
+            <input
+              id="quantity"
+              type="number"
+              min="1"
+              value="1"
+            >
+
+
+            <button
+              id="buyBtn"
+              class="buy-btn"
+            >
+              BUY
+            </button>
+
+
+            <button
+              id="sellBtn"
+              class="sell-btn"
+            >
+              SELL
+            </button>
+
+          </div>
+
+
+          <div
+            id="orderMessage"
+            class="message"
+          ></div>
+
+
+          <div
+            id="portfolioValue"
+            class="portfolio-value"
+          >
+            PORTFOLIO: ₹ 0.00
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- PROFILE MODAL -->
+
+  <div
+    id="profileModal"
+    class="modal hidden"
+  >
+
+    <div class="modal-card">
+
+      <button
+        id="closeModal"
+        class="close"
+        type="button"
+      >
+        ×
+      </button>
+
+
+      <div class="section-title">
+        USER PROFILE
+      </div>
+
+
+      <h3>
+        UPDATE PROFILE
+      </h3>
+
+
+      <p class="modal-help">
+        Update your account information.
+      </p>
+
+
+      <label for="newName">
+        YOUR NAME
+      </label>
+
+      <input
+        id="newName"
+        type="text"
+        placeholder="Your name"
+      >
+
+
+      <label for="newUsername">
+        NEW USERNAME
+      </label>
+
+      <input
+        id="newUsername"
+        type="text"
+        placeholder="Choose username"
+      >
+
+
+      <label for="newPassword">
+        NEW PASSWORD
+      </label>
+
+      <input
+        id="newPassword"
+        type="password"
+        placeholder="Choose password"
+      >
+
+
+      <button
+        id="saveProfile"
+        class="primary-btn"
+      >
+        SAVE PROFILE
+      </button>
+
+
+      <p
+        id="profileMessage"
+        class="message"
+      ></p>
+
+    </div>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>

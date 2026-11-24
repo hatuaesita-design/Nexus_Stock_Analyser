@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analyzer - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+<div class="background-grid"></div>
+
+<div class="login-container">
+
+    <div class="logo">
+        <span>◆</span> STOCK ANALYZER
+    </div>
+
+    <p class="subtitle">GLOBAL MARKET TERMINAL</p>
+
+    <!-- Login Box -->
+    <div class="login-box">
+
+        <h2>ACCESS TERMINAL</h2>
+
+        <div class="input-group">
+            <label>USERNAME</label>
+            <input type="text" id="username" placeholder="Enter username">
+        </div>
+
+        <div class="input-group">
+            <label>PASSWORD</label>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+
+        <button id="loginBtn" class="main-btn">
+            LOGIN
+        </button>
+
+        <button id="guestBtn" class="guest-btn">
+            CONTINUE AS GUEST
+        </button>
+
+        <p id="message"></p>
+
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+        <button id="createAccountBtn" class="create-btn">
+            CREATE NEW ACCOUNT
+        </button>
+
+    </div>
+
+    <!-- Default Login Information -->
+    <div class="default-info">
+        <p>DEFAULT ACCESS</p>
+        <span>Username: <b>admin</b></span>
+        <span>Password: <b>admin123</b></span>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 STOCK ANALYZER</p>
+        <p>MARKET DATA • ANALYSIS • INSIGHTS</p>
+    </div>
+
+</div>
+
+
+<!-- Create Account Modal -->
+
+<div id="registerModal" class="modal">
+
+    <div class="register-box">
+
+        <button id="closeModal" class="close-btn">×</button>
+
+        <h2>CREATE ACCOUNT</h2>
+        <p class="modal-subtitle">REGISTER NEW TERMINAL USER</p>
+
+        <div class="input-group">
+            <label>YOUR NAME</label>
+            <input type="text" id="newName" placeholder="Enter your name">
+        </div>
+
+        <div class="input-group">
+            <label>USERNAME</label>
+            <input type="text" id="newUsername" placeholder="Choose username">
+        </div>
+
+        <div class="input-group">
+            <label>PASSWORD</label>
+            <input type="password" id="newPassword" placeholder="Choose password">
+        </div>
+
+        <div class="input-group">
+            <label>CONFIRM PASSWORD</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm password">
+        </div>
+
+        <button id="registerBtn" class="main-btn">
+            CREATE ACCOUNT
+        </button>
+
+        <p id="registerMessage"></p>
+
+    </div>
+
+</div>
+
+<script src="login.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+min-height: 100vh;
+font-family: "Courier New", monospace;
+background: #05070d;
+color: #00ffcc;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow-x: hidden;
+}
+
+/* Background */
+
+.background-grid {
+position: fixed;
+inset: 0;
+background-image:
+linear-gradient(rgba(0, 255, 204, 0.06) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0, 255, 204, 0.06) 1px, transparent 1px);
+background-size: 40px 40px;
+z-index: -2;
+}
+
+.background-grid::after {
+content: "";
+position: fixed;
+inset: 0;
+background:
+radial-gradient(circle at center,
+transparent 20%,
+#05070d 85%);
+}
+
+/* Main Container */
+
+.login-container {
+width: 420px;
+max-width: 92%;
+text-align: center;
+}
+
+/* Logo */
+
+.logo {
+font-size: 28px;
+font-weight: bold;
+letter-spacing: 4px;
+color: #00ffcc;
+text-shadow: 0 0 10px #00ffcc;
+}
+
+.logo span {
+color: #ff00ff;
+text-shadow: 0 0 10px #ff00ff;
+}
+
+.subtitle {
+margin-top: 8px;
+margin-bottom: 30px;
+color: #728b99;
+font-size: 11px;
+letter-spacing: 3px;
+}
+
+/* Login Box */
+
+.login-box,
+.register-box {
+background: rgba(5, 12, 20, 0.94);
+border: 1px solid #00ffcc;
+padding: 30px;
+box-shadow:
+0 0 15px rgba(0, 255, 204, 0.25),
+inset 0 0 20px rgba(0, 255, 204, 0.03);
+}
+
+.login-box h2,
+.register-box h2 {
+color: #ffffff;
+font-size: 20px;
+letter-spacing: 3px;
+margin-bottom: 25px;
+}
+
+/* Inputs */
+
+.input-group {
+text-align: left;
+margin-bottom: 18px;
+}
+
+.input-group label {
+display: block;
+font-size: 11px;
+color: #00ffcc;
+letter-spacing: 2px;
+margin-bottom: 7px;
+}
+
+.input-group input {
+width: 100%;
+padding: 13px;
+background: #02050a;
+border: 1px solid #29434a;
+color: #ffffff;
+outline: none;
+font-family: "Courier New", monospace;
+font-size: 14px;
+}
+
+.input-group input:focus {
+border-color: #00ffcc;
+box-shadow: 0 0 8px rgba(0, 255, 204, 0.3);
+}
+
+.input-group input::placeholder {
+color: #52616b;
+}
+
+/* Buttons */
+
+button {
+font-family: "Courier New", monospace;
+cursor: pointer;
+}
+
+.main-btn {
+width: 100%;
+padding: 14px;
+border: 1px solid #00ffcc;
+background: #00ffcc;
+color: #00100c;
+font-weight: bold;
+letter-spacing: 2px;
+transition: 0.2s;
+}
+
+.main-btn:hover {
+background: transparent;
+color: #00ffcc;
+box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+}
+
+.guest-btn {
+width: 100%;
+margin-top: 12px;
+padding: 13px;
+border: 1px solid #728b99;
+background: transparent;
+color: #a9bac3;
+letter-spacing: 2px;
+}
+
+.guest-btn:hover {
+border-color: #ffffff;
+color: #ffffff;
+}
+
+.create-btn {
+width: 100%;
+padding: 12px;
+border: 1px solid #ff00ff;
+background: transparent;
+color: #ff00ff;
+letter-spacing: 1px;
+}
+
+.create-btn:hover {
+background: #ff00ff;
+color: #100010;
+box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+}
+
+/* Divider */
+
+.divider {
+display: flex;
+align-items: center;
+margin: 22px 0;
+color: #52616b;
+font-size: 11px;
+}
+
+.divider::before,
+.divider::after {
+content: "";
+flex: 1;
+height: 1px;
+background: #26363d;
+}
+
+.divider span {
+padding: 0 12px;
+}
+
+/* Messages */
+
+#message,
+#registerMessage {
+min-height: 18px;
+margin-top: 12px;
+font-size: 12px;
+}
+
+.error {
+color: #ff4d6d;
+}
+
+.success {
+color: #00ff99;
+}
+
+/* Default Login */
+
+.default-info {
+margin-top: 18px;
+padding: 13px;
+border: 1px dashed #30434b;
+background: rgba(0, 255, 204, 0.02);
+font-size: 11px;
+color: #728b99;
+}
+
+.default-info p {
+color: #ff00ff;
+letter-spacing: 2px;
+margin-bottom: 8px;
+}
+
+.default-info span {
+margin: 0 8px;
+}
+
+/* Footer */
+
+.footer {
+margin-top: 25px;
+color: #394950;
+font-size: 9px;
+letter-spacing: 1px;
+line-height: 18px;
+}
+
+/* Modal */
+
+.modal {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0.8);
+justify-content: center;
+align-items: center;
+padding: 20px;
+z-index: 10;
+}
+
+.modal.active {
+display: flex;
+}
+
+.register-box {
+width: 420px;
+max-width: 100%;
+position: relative;
+border-color: #ff00ff;
+box-shadow: 0 0 25px rgba(255, 0, 255, 0.2);
+}
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 14px;
+background: none;
+border: none;
+color: #728b99;
+font-size: 28px;
+}
+
+.close-btn:hover {
+color: #ff00ff;
+}
+
+.modal-subtitle {
+color: #728b99;
+font-size: 10px;
+letter-spacing: 2px;
+margin-top: -15px;
+margin-bottom: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+.logo {
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+.login-box,
+.register-box {
+    padding: 22px;
+}
+
+.default-info span {
+    display: block;
+    margin: 4px 0;
+}}
