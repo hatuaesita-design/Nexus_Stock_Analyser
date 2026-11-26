@@ -1,6 +1,8 @@
 NEXUS STOCK ANALYZER
 ====================
 
+VERCEL APP LINK: https://nexusstockanalyser-iota.vercel.app/
+
 Files:
 - index.html       Login / guest page
 - dashboard.html   Main stock analyzer
